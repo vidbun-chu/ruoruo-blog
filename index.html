@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="弱弱投资日记 - 每日A股市场分析、投资策略与财经观察">
+    <meta name="keywords" content="投资日记,A股分析,股票市场,财经观察,投资策略,弱弱投资">
+    <meta name="author" content="弱弱投资">
+    <meta property="og:title" content="弱弱投资日记">
+    <meta property="og:description" content="每日A股市场分析、投资策略与财经观察">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://vidbun-chu.github.io/ruoruo-blog/">
+    <meta property="og:locale" content="zh_CN">
+    <link rel="alternate" type="application/rss+xml" title="弱弱投资日记 RSS" href="/ruoruo-blog/feed.xml">
+    <title>弱弱投资日记 | Ruoruo Investment Diary</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo-section">
+                    <h1 class="site-title">弱弱投资日记</h1>
+                    <p class="site-subtitle">Ruoruo Investment Diary</p>
+                </div>
+                <nav class="main-nav">
+                    <a href="#home" class="nav-link active">首页</a>
+                    <a href="#articles" class="nav-link">文章</a>
+                    <a href="#about" class="nav-link">关于</a>
+                    <a href="#donate" class="nav-link">赞赏</a>
+                    <a href="/ruoruo-blog/feed.xml" class="nav-link rss-link" title="RSS订阅">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                            <circle cx="6.18" cy="17.82" r="2.18"/>
+                            <path d="M4 4.44v2.83c7.03 0 12.73 5.7 12.73 12.73h2.83c0-8.59-6.97-15.56-15.56-15.56zm0 5.66v2.83c3.9 0 7.07 3.17 7.07 7.07h2.83c0-5.47-4.43-9.9-9.9-9.9z"/>
+                        </svg>
+                    </a>
+                </nav>
+                <button class="mobile-menu-btn" aria-label="菜单">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div class="market-ticker" id="marketTicker">
+        <div class="ticker-content">
+            <span class="ticker-item">上证指数 <span id="sh-index" class="loading">--</span></span>
+            <span class="ticker-item">深证成指 <span id="sz-index" class="loading">--</span></span>
+            <span class="ticker-item">创业板指 <span id="cy-index" class="loading">--</span></span>
+        </div>
+    </div>
+
+    <main class="container">
+        <section id="home" class="hero-section">
+            <div class="hero-content">
+                <h2 class="hero-title">每日投资分析</h2>
+                <p class="hero-desc">关注A股市场动态，分享投资策略与思考。<br>用数据说话，以逻辑分析，助您把握投资机会。</p>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-number" id="articleCount">0</span>
+                        <span class="stat-label">分析文章</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" id="trackingDays">0</span>
+                        <span class="stat-label">跟踪天数</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="articles" class="articles-section">
+            <div class="section-header">
+                <h2 class="section-title">最新分析</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="articles-grid" id="articlesGrid">
+                <article class="article-card placeholder">
+                    <div class="article-meta">
+                        <span class="article-date">等待数据加载...</span>
+                        <span class="article-tag">市场分析</span>
+                    </div>
+                    <h3 class="article-title">每日市场分析文章将在这里显示</h3>
+                    <p class="article-excerpt">运行 generate_article.py 生成每日投资分析文章，或查看已生成的文章列表。</p>
+                    <a href="#" class="article-link">阅读全文 →</a>
+                </article>
+            </div>
+            <div class="load-more" id="loadMore" style="display:none;">
+                <button class="btn-load-more" onclick="loadMoreArticles()">加载更多</button>
+            </div>
+        </section>
+
+        <section id="about" class="about-section">
+            <div class="section-header">
+                <h2 class="section-title">关于本站</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>「弱弱投资日记」是一个专注于A股市场每日分析的个人博客。</p>
+                    <p>我们通过Python脚本自动抓取市场数据，生成结构化的投资分析文章，帮助投资者更好地理解市场动态。</p>
+                    <p><strong>免责声明：</strong>本站内容仅供学习交流，不构成任何投资建议。投资有风险，入市需谨慎。</p>
+                </div>
+                <div class="about-features">
+                    <div class="feature-item">
+                        <div class="feature-icon">📊</div>
+                        <h3>数据驱动</h3>
+                        <p>基于实时市场数据的客观分析</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">🤖</div>
+                        <h3>自动更新</h3>
+                        <p>Python脚本每日自动生成文章</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">📱</div>
+                        <h3>移动友好</h3>
+                        <p>响应式设计，随时随地阅读</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="donate" class="donate-section">
+            <div class="section-header">
+                <h2 class="section-title">赞赏支持</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="donate-content">
+                <p class="donate-text">如果本内容对您有帮助，欢迎赞赏支持！您的支持是我持续创作的动力。</p>
+                <div class="donate-cards">
+                    <div class="donate-card">
+                        <div class="qr-placeholder">
+                            <div class="qr-inner">
+                                <svg width="120" height="120" viewBox="0 0 120 120" fill="none">
+                                    <rect width="120" height="120" fill="#1a1a2e"/>
+                                    <rect x="10" y="10" width="30" height="30" rx="4" fill="#e94560"/>
+                                    <rect x="80" y="10" width="30" height="30" rx="4" fill="#e94560"/>
+                                    <rect x="10" y="80" width="30" height="30" rx="4" fill="#e94560"/>
+                                    <rect x="45" y="45" width="30" height="30" rx="4" fill="#e94560"/>
+                                    <text x="60" y="110" text-anchor="middle" fill="#999" font-size="10">赞赏码</text>
+                                </svg>
+                            </div>
+                        </div>
+                        <h3>微信赞赏</h3>
+                        <p class="donate-note">扫描二维码赞赏</p>
+                    </div>
+                    <div class="donate-card">
+                        <div class="qr-placeholder">
+                            <div class="qr-inner">
+                                <svg width="120" height="120" viewBox="0 0 120 120" fill="none">
+                                    <rect width="120" height="120" fill="#1a1a2e"/>
+                                    <rect x="10" y="10" width="30" height="30" rx="4" fill="#1677ff"/>
+                                    <rect x="80" y="10" width="30" height="30" rx="4" fill="#1677ff"/>
+                                    <rect x="10" y="80" width="30" height="30" rx="4" fill="#1677ff"/>
+                                    <rect x="45" y="45" width="30" height="30" rx="4" fill="#1677ff"/>
+                                    <text x="60" y="110" text-anchor="middle" fill="#999" font-size="10">赞赏码</text>
+                                </svg>
+                            </div>
+                        </div>
+                        <h3>支付宝赞赏</h3>
+                        <p class="donate-note">扫描二维码赞赏</p>
+                    </div>
+                </div>
+                <p class="donate-disclaimer">赞赏纯属自愿，所有内容仍将免费提供。</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <p class="footer-brand">弱弱投资日记</p>
+                    <p class="footer-copy">© 2024-2026 弱弱投资日记. All rights reserved.</p>
+                </div>
+                <div class="footer-links">
+                    <a href="https://github.com/vidbun-chu/ruoruo-blog" target="_blank" rel="noopener">GitHub</a>
+                    <a href="/ruoruo-blog/feed.xml">RSS订阅</a>
+                    <a href="#about">关于</a>
+                </div>
+                <div class="footer-disclaimer">
+                    <p>⚠️ 免责声明：本站内容仅供学习交流，不构成投资建议。</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <button class="back-to-top" id="backToTop" title="回到顶部">↑</button>
+
+    <script src="script.js"></script>
+</body>
+</html>

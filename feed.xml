@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>弱弱投资日记</title>
+    <link>https://vidbun-chu.github.io/ruoruo-blog/</link>
+    <description>每日A股市场分析、投资策略与财经观察</description>
+    <language>zh-cn</language>
+    <lastBuildDate>Tue, 16 Jun 2026 20:15:04 +0800</lastBuildDate>
+    <atom:link href="https://vidbun-chu.github.io/ruoruo-blog/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>2026-06-16 A股市场分析</title>
+      <link>https://vidbun-chu.github.io/ruoruo-blog/articles/2026-06-16.html</link>
+      <description>今日A股市场小幅调整，市场整体呈现震荡整理态势。</description>
+      <pubDate>Tue, 16 Jun 2026 20:15:04 +0800</pubDate>
+      <guid>https://vidbun-chu.github.io/ruoruo-blog/articles/2026-06-16.html</guid>
+    </item>
+<item>
+      <title>欢迎来到弱弱投资日记</title>
+      <link>https://vidbun-chu.github.io/ruoruo-blog/</link>
+      <description>本站已上线，每日将自动更新A股市场分析文章。运行 generate_article.py 生成今日分析。</description>
+      <pubDate>Mon, 16 Jun 2025 00:00:00 +0800</pubDate>
+      <guid>https://vidbun-chu.github.io/ruoruo-blog/#welcome</guid>
+    </item>
+  </channel>
+</rss>
