@@ -25,6 +25,23 @@ td{padding:8px;border-bottom:1px solid #1a1a2e}
 .warn{background:#1a1a0a;border-left:3px solid #ffaa00;padding:12px;margin:12px 0;border-radius:4px}
 .back{display:inline-block;color:#00d4aa;text-decoration:none;margin-bottom:20px;font-size:0.9em}
 .back:hover{text-decoration:underline}
+.share-section{text-align:center;padding:30px 0;border-top:1px solid #1a1a2e;margin-top:30px}
+.share-section p{color:#888;font-size:0.9em;margin-bottom:16px}
+.share-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.share-btn{display:inline-flex;align-items:center;gap:6px;padding:10px 20px;border-radius:24px;border:none;font-size:0.9em;cursor:pointer;transition:all 0.2s;color:#fff;text-decoration:none}
+.share-btn:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,0,0,0.4)}
+.share-wechat{background:#07c160}
+.share-weibo{background:#e6162d}
+.share-qq{background:#12b7f5}
+.share-copy{background:#1a1a2e;color:#00d4aa;border:1px solid #00d4aa}
+.share-copy:hover{background:#00d4aa;color:#0a0a0a}
+.qr-modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.7);z-index:1000;justify-content:center;align-items:center}
+.qr-modal.show{display:flex}
+.qr-box{background:#fff;border-radius:12px;padding:24px;text-align:center;max-width:300px}
+.qr-box h3{color:#333;margin-bottom:12px;font-size:1em}
+.qr-box img{max-width:200px;margin:8px 0}
+.qr-box p{color:#666;font-size:0.8em;margin-top:8px}
+.qr-box .close-qr{color:#999;cursor:pointer;font-size:0.85em;margin-top:12px;display:inline-block}
 .donate{text-align:center;padding:30px 0;border-top:1px solid #1a1a2e;margin-top:30px}
 .disclaimer{color:#666;font-size:0.8em;text-align:center;margin-top:30px;padding-top:20px;border-top:1px solid #1a1a2e}
 </style>
@@ -103,6 +120,44 @@ td{padding:8px;border-bottom:1px solid #1a1a2e}
 <li><b>等待信号</b>：比率回到0.95以上企稳 → 猴市偏空可试探；回到0.98以上 → 猴市偏多可加仓至50%</li>
 <li><b>止损纪律</b>：亏≥10%减仓，≥20%无条件清仓，熊市里止损比止盈重要一万倍</li>
 </ul>
+
+<div class="share-section">
+<p>📢 觉得有帮助？转发给朋友看看</p>
+<div class="share-btns">
+<a href="javascript:void(0)" class="share-btn share-wechat" onclick="showQR()">💬 微信</a>
+<a class="share-btn share-weibo" id="share-weibo" href="#" target="_blank">🔥 微博</a>
+<a class="share-btn share-qq" id="share-qq" href="#" target="_blank">💙 QQ</a>
+<button class="share-btn share-copy" onclick="copyLink()">🔗 复制链接</button>
+</div>
+</div>
+
+<div class="qr-modal" id="qr-modal" onclick="if(event.target===this)closeQR()">
+<div class="qr-box">
+<h3>微信扫码分享</h3>
+<img id="qr-img" src="" alt="微信分享二维码">
+<p>打开微信 → 扫一扫 → 分享给朋友</p>
+<span class="close-qr" onclick="closeQR()">关闭</span>
+</div>
+</div>
+
+<script>
+(function(){
+var u=location.href,t=document.title,d=document.querySelector('meta[name=\"description\"]');
+var desc=d?d.content:'';
+document.getElementById('qr-img').src='https://api.qrserver.com/v1/create-qr-code/?size=200x200&data='+encodeURIComponent(u);
+document.getElementById('share-weibo').href='https://service.weibo.com/share/share.php?url='+encodeURIComponent(u)+'&title='+encodeURIComponent(t)+'&searchPic=false';
+document.getElementById('share-qq').href='https://connect.qq.com/widget/shareqq/index.html?url='+encodeURIComponent(u)+'&title='+encodeURIComponent(t)+'&desc='+encodeURIComponent(desc);
+})();
+function showQR(){document.getElementById('qr-modal').classList.add('show')}
+function closeQR(){document.getElementById('qr-modal').classList.remove('show')}
+function copyLink(){
+var t=document.createElement('textarea');t.value=location.href;
+t.style.cssText='position:fixed;left:-9999px';document.body.appendChild(t);
+t.select();document.execCommand('copy');document.body.removeChild(t);
+var btn=document.querySelector('.share-copy');btn.textContent='✅ 已复制';
+setTimeout(function(){btn.textContent='🔗 复制链接'},2000);
+}
+</script>
 
 <div class="donate">
 <p style="color:#888">如果觉得分析有帮助，请作者喝杯咖啡 ☕</p>
