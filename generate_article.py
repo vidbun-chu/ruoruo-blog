@@ -340,6 +340,25 @@ def generate_article_html(date_str: str, data: dict, analysis: dict) -> str:
             <blockquote>
                 <p>免责声明：本文由程序自动生成，仅供学习交流，不构成任何投资建议。投资有风险，入市需谨慎。</p>
             </blockquote>
+
+            <div class="share-section" style="text-align:center;padding:30px 0;border-top:1px solid #2a2a3e;margin-top:30px">
+                <p style="color:#888;font-size:0.9em;margin-bottom:16px">📢 觉得有帮助？转发给朋友看看</p>
+                <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+                    <a href="javascript:void(0)" style="display:inline-flex;align-items:center;gap:6px;padding:10px 20px;border-radius:24px;font-size:0.9em;cursor:pointer;color:#fff;text-decoration:none;background:#07c160" onclick="showQR()">💬 微信</a>
+                    <a id="share-weibo" href="#" target="_blank" style="display:inline-flex;align-items:center;gap:6px;padding:10px 20px;border-radius:24px;font-size:0.9em;cursor:pointer;color:#fff;text-decoration:none;background:#e6162d">🔥 微博</a>
+                    <a id="share-qq" href="#" target="_blank" style="display:inline-flex;align-items:center;gap:6px;padding:10px 20px;border-radius:24px;font-size:0.9em;cursor:pointer;color:#fff;text-decoration:none;background:#12b7f5">💙 QQ</a>
+                    <button onclick="copyLink()" style="display:inline-flex;align-items:center;gap:6px;padding:10px 20px;border-radius:24px;font-size:0.9em;cursor:pointer;background:transparent;color:#00d4aa;border:1px solid #00d4aa" id="copy-btn">🔗 复制链接</button>
+                </div>
+            </div>
+
+            <div id="qr-modal" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.7);z-index:1000;justify-content:center;align-items:center" onclick="if(event.target===this)closeQR()">
+                <div style="background:#fff;border-radius:12px;padding:24px;text-align:center;max-width:300px">
+                    <h3 style="color:#333;margin-bottom:12px;font-size:1em">微信扫码分享</h3>
+                    <img id="qr-img" src="" alt="微信分享二维码" style="max-width:200px;margin:8px 0">
+                    <p style="color:#666;font-size:0.8em;margin-top:8px">打开微信 → 扫一扫 → 分享给朋友</p>
+                    <span onclick="closeQR()" style="color:#999;cursor:pointer;font-size:0.85em;margin-top:12px;display:inline-block">关闭</span>
+                </div>
+            </div>
         </div>
     </main>
     

@@ -322,3 +322,50 @@
     }
 
 })();
+
+// ==================== Share Functionality ====================
+function showQR() {
+    var modal = document.getElementById('qr-modal');
+    if (modal) modal.style.display = 'flex';
+}
+
+function closeQR() {
+    var modal = document.getElementById('qr-modal');
+    if (modal) modal.style.display = 'none';
+}
+
+function copyLink() {
+    var ta = document.createElement('textarea');
+    ta.value = location.href;
+    ta.style.cssText = 'position:fixed;left:-9999px';
+    document.body.appendChild(ta);
+    ta.select();
+    document.execCommand('copy');
+    document.body.removeChild(ta);
+    var btn = document.getElementById('copy-btn');
+    if (btn) {
+        btn.textContent = '✅ 已复制';
+        setTimeout(function() { btn.textContent = '🔗 复制链接'; }, 2000);
+    }
+}
+
+// Init share links on DOM ready
+document.addEventListener('DOMContentLoaded', function() {
+    var u = location.href;
+    var t = document.title;
+    var d = document.querySelector('meta[name="description"]');
+    var desc = d ? d.content : '';
+
+    var qrImg = document.getElementById('qr-img');
+    if (qrImg) {
+        qrImg.src = 'https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=' + encodeURIComponent(u);
+    }
+    var wb = document.getElementById('share-weibo');
+    if (wb) {
+        wb.href = 'https://service.weibo.com/share/share.php?url=' + encodeURIComponent(u) + '&title=' + encodeURIComponent(t) + '&searchPic=false';
+    }
+    var qq = document.getElementById('share-qq');
+    if (qq) {
+        qq.href = 'https://connect.qq.com/widget/shareqq/index.html?url=' + encodeURIComponent(u) + '&title=' + encodeURIComponent(t) + '&desc=' + encodeURIComponent(desc);
+    }
+});
