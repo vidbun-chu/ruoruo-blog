@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="2026-08-04 A股盘后复盘 - 大周期定位、板块主线、重仓扫描">
+    <meta name="keywords" content="A股复盘,每日分析,2026-08-04,板块主线,重仓扫描">
+    <meta property="og:title" content="2026-08-04 A股盘后复盘">
+    <meta property="og:description" content="创业板大涨5.64%，AI与创新药双主线爆发，大周期猴市偏空需谨慎">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://vidbun-chu.github.io/ruoruo-blog/articles/2026-08-04-review.html">
+    <title>2026-08-04 A股盘后复盘 - 投资日记</title>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        .trend-indicator {
+            display: inline-block;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+        .trend-bearish { background: rgba(0,212,170,0.15); color: #00d4aa; }
+        .trend-bullish { background: rgba(233,69,96,0.15); color: #e94560; }
+        .up { color: #e94560; }
+        .down { color: #00d4aa; }
+        .data-section { margin: 24px 0; }
+        .data-section h2 { font-size: 1.3rem; color: #e0e0e0; margin-bottom: 16px; }
+        table { width: 100%; border-collapse: collapse; }
+        th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid #2a2a40; }
+        th { color: #a0a0b0; font-weight: 500; font-size: 0.85rem; }
+        td { font-family: "SF Mono","Consolas",monospace; font-size: 0.9rem; }
+        .analysis-section { margin: 24px 0; }
+        .analysis-section ul { padding-left: 20px; }
+        .analysis-section li { margin: 8px 0; color: #a0a0b0; }
+        .cycle-box {
+            background: linear-gradient(135deg, rgba(0,212,170,0.08), rgba(0,212,170,0.02));
+            border: 1px solid rgba(0,212,170,0.2);
+            border-radius: 12px;
+            padding: 20px;
+            margin: 16px 0;
+        }
+        .cycle-label { color: #00d4aa; font-size: 1.5rem; font-weight: 700; }
+        .cycle-detail { color: #a0a0b0; margin-top: 8px; }
+        .stock-card {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 8px;
+            padding: 12px 16px;
+            margin: 8px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .stock-name { font-weight: 600; color: #e0e0e0; }
+        .stock-code { color: #666; font-size: 0.85rem; }
+        .stock-score { 
+            background: rgba(233,69,96,0.15); 
+            color: #e94560; 
+            padding: 4px 10px; 
+            border-radius: 12px; 
+            font-weight: 600; 
+            font-size: 0.85rem; 
+        }
+        .sector-bar {
+            display: flex;
+            align-items: center;
+            margin: 6px 0;
+        }
+        .sector-name { width: 140px; color: #a0a0b0; font-size: 0.9rem; }
+        .sector-score-bar {
+            flex: 1;
+            height: 20px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 10px;
+            overflow: hidden;
+            margin: 0 12px;
+        }
+        .sector-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #e94560, #ff6b81);
+            border-radius: 10px;
+            transition: width 0.3s;
+        }
+        .sector-value { color: #e0e0e0; font-size: 0.85rem; font-weight: 600; width: 40px; text-align: right; }
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo-section">
+                    <h1 class="site-title">投资日记</h1>
+                    <p class="site-subtitle">每日A股复盘</p>
+                </div>
+                <nav class="main-nav">
+                    <a href="/ruoruo-blog/" class="nav-link">首页</a>
+                    <a href="/ruoruo-blog/#articles" class="nav-link">文章</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+    
+    <main class="container article-detail">
+        <a href="/ruoruo-blog/" class="article-back">← 返回首页</a>
+        
+        <div class="article-detail-header">
+            <h1>2026-08-04 A股盘后复盘</h1>
+            <div class="article-detail-meta">
+                <span>📅 2026-08-04 周二</span>
+                <span>📊 盘后复盘</span>
+                <span>🤖 自动生成</span>
+            </div>
+        </div>
+        
+        <div class="article-detail-body">
+            <div class="cycle-box">
+                <div class="cycle-label">📉 猴市偏空</div>
+                <div class="cycle-detail">
+                    上证指数 3822.28 | 5月均线 3985.93 | 比值 0.9589<br>
+                    建议仓位：40-50% | 大周期不支持重仓，仅可轻仓试探（≤15%）
+                </div>
+            </div>
+            
+            <p>今日A股市场分化明显，创业板指大涨5.64%领涨全场，深证成指涨3.25%，而上证50微跌0.29%。市场呈现明显的成长风格占优特征，AI、创新药、软件等科技成长板块全面爆发，而银行、保险等权重板块表现疲软。</p>
+            
+            <div class="data-section">
+                <h2>📈 主要指数</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>指数</th>
+                            <th>收盘价</th>
+                            <th>涨跌幅</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>上证指数</td>
+                            <td>3822.28</td>
+                            <td class="up">+0.33%</td>
+                        </tr>
+                        <tr>
+                            <td>深证成指</td>
+                            <td>13885.71</td>
+                            <td class="up">+3.25%</td>
+                        </tr>
+                        <tr>
+                            <td>创业板指</td>
+                            <td>3488.97</td>
+                            <td class="up">+5.64%</td>
+                        </tr>
+                        <tr>
+                            <td>沪深300</td>
+                            <td>4600.93</td>
+                            <td class="up">+1.27%</td>
+                        </tr>
+                        <tr>
+                            <td>上证50</td>
+                            <td>2878.67</td>
+                            <td class="down">-0.29%</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="data-section">
+                <h2>🏆 板块龙头平均得分 TOP 10</h2>
+                <p style="color:#888;font-size:0.85rem;margin-bottom:16px">基于120只龙头股技术面综合评分</p>
+                <div class="sector-bar">
+                    <span class="sector-name">银行</span>
+                    <div class="sector-score-bar"><div class="sector-fill" style="width:86%"></div></div>
+                    <span class="sector-value">34.6</span>
+                </div>
+                <div class="sector-bar">
+                    <span class="sector-name">计算机/软件</span>
+                    <div class="sector-score-bar"><div class="sector-fill" style="width:84%"></div></div>
+                    <span class="sector-value">33.5</span>
+                </div>
+                <div class="sector-bar">
+                    <span class="sector-name">电力/核电/风电</span>
+                    <div class="sector-score-bar"><div class="sector-fill" style="width:78%"></div></div>
+                    <span class="sector-value">31.2</span>
+                </div>
+                <div class="sector-bar">
+                    <span class="sector-name">医药/创新药</span>
+                    <div class="sector-score-bar"><div class="sector-fill" style="width:77%"></div></div>
+                    <span class="sector-value">30.7</span>
+                </div>
+                <div class="sector-bar">
+                    <span class="sector-name">家电</span>
+                    <div class="sector-score-bar"><div class="sector-fill" style="width:75%"></div></div>
+                    <span class="sector-value">30.0</span>
+                </div>
+                <div class="sector-bar">
+                    <span class="sector-name">特高压/电力设备</span>
+                    <div class="sector-score-bar"><div class="sector-fill" style="width:74%"></div></div>
+                    <span class="sector-value">29.6</span>
+                </div>
+                <div class="sector-bar">
+                    <span class="sector-name">白酒</span>
+                    <div class="sector-score-bar"><div class="sector-fill" style="width:70%"></div></div>
+                    <span class="sector-value">28.0</span>
+                </div>
+                <div class="sector-bar">
+                    <span class="sector-name">医疗器械/医美</span>
+                    <div class="sector-score-bar"><div class="sector-fill" style="width:70%"></div></div>
+                    <span class="sector-value">27.8</span>
+                </div>
+                <div class="sector-bar">
+                    <span class="sector-name">人工智能</span>
+                    <div class="sector-score-bar"><div class="sector-fill" style="width:68%"></div></div>
+                    <span class="sector-value">27.4</span>
+                </div>
+                <div class="sector-bar">
+                    <span class="sector-name">食品饮料/消费</span>
+                    <div class="sector-score-bar"><div class="sector-fill" style="width:58%"></div></div>
+                    <span class="sector-value">23.4</span>
+                </div>
+            </div>
+            
+            <div class="data-section">
+                <h2>🔥 全市场重仓扫描 TOP 10</h2>
+                <p style="color:#888;font-size:0.85rem;margin-bottom:16px">技术得分≥25且满足多头排列条件（大周期猴市偏空，仅轻仓试探）</p>
+                <div class="stock-card">
+                    <div>
+                        <span style="color:#666;margin-right:8px">#1</span>
+                        <span class="stock-name">海康威视</span>
+                        <span class="stock-code">002415</span>
+                        <span style="color:#888;font-size:0.8rem;margin-left:8px">人工智能/电子</span>
+                    </div>
+                    <div style="display:flex;align-items:center;gap:12px">
+                        <span class="up" style="font-size:0.9rem">+1.79%</span>
+                        <span class="stock-score">55分</span>
+                    </div>
+                </div>
+                <div class="stock-card">
+                    <div>
+                        <span style="color:#666;margin-right:8px">#2</span>
+                        <span class="stock-name">药明康德</span>
+                        <span class="stock-code">603259</span>
+                        <span style="color:#888;font-size:0.8rem;margin-left:8px">医药/创新药</span>
+                    </div>
+                    <div style="display:flex;align-items:center;gap:12px">
+                        <span class="up" style="font-size:0.9rem">+10.00%</span>
+                        <span class="stock-score">55分</span>
+                    </div>
+                </div>
+                <div class="stock-card">
+                    <div>
+                        <span style="color:#666;margin-right:8px">#3</span>
+                        <span class="stock-name">金山办公</span>
+                        <span class="stock-code">688111</span>
+                        <span style="color:#888;font-size:0.8rem;margin-left:8px">计算机/软件</span>
+                    </div>
+                    <div style="display:flex;align-items:center;gap:12px">
+                        <span class="up" style="font-size:0.9rem">+0.16%</span>
+                        <span class="stock-score">53分</span>
+                    </div>
+                </div>
+                <div class="stock-card">
+                    <div>
+                        <span style="color:#666;margin-right:8px">#4</span>
+                        <span class="stock-name">同花顺</span>
+                        <span class="stock-code">300033</span>
+                        <span style="color:#888;font-size:0.8rem;margin-left:8px">人工智能</span>
+                    </div>
+                    <div style="display:flex;align-items:center;gap:12px">
+                        <span class="up" style="font-size:0.9rem">+1.05%</span>
+                        <span class="stock-score">42分</span>
+                    </div>
+                </div>
+                <div class="stock-card">
+                    <div>
+                        <span style="color:#666;margin-right:8px">#5</span>
+                        <span class="stock-name">中国核电</span>
+                        <span class="stock-code">601985</span>
+                        <span style="color:#888;font-size:0.8rem;margin-left:8px">电力/核电</span>
+                    </div>
+                    <div style="display:flex;align-items:center;gap:12px">
+                        <span class="down" style="font-size:0.9rem">-1.11%</span>
+                        <span class="stock-score">42分</span>
+                    </div>
+                </div>
+                <div class="stock-card">
+                    <div>
+                        <span style="color:#666;margin-right:8px">#6</span>
+                        <span class="stock-name">华能水电</span>
+                        <span class="stock-code">600025</span>
+                        <span style="color:#888;font-size:0.8rem;margin-left:8px">电力/核电</span>
+                    </div>
+                    <div style="display:flex;align-items:center;gap:12px">
+                        <span class="down" style="font-size:0.9rem">-1.78%</span>
+                        <span class="stock-score">42分</span>
+                    </div>
+                </div>
+                <div class="stock-card">
+                    <div>
+                        <span style="color:#666;margin-right:8px">#7</span>
+                        <span class="stock-name">伊利股份</span>
+                        <span class="stock-code">600887</span>
+                        <span style="color:#888;font-size:0.8rem;margin-left:8px">食品饮料</span>
+                    </div>
+                    <div style="display:flex;align-items:center;gap:12px">
+                        <span class="down" style="font-size:0.9rem">-2.77%</span>
+                        <span class="stock-score">42分</span>
+                    </div>
+                </div>
+                <div class="stock-card">
+                    <div>
+                        <span style="color:#666;margin-right:8px">#8</span>
+                        <span class="stock-name">格力电器</span>
+                        <span class="stock-code">000651</span>
+                        <span style="color:#888;font-size:0.8rem;margin-left:8px">家电</span>
+                    </div>
+                    <div style="display:flex;align-items:center;gap:12px">
+                        <span class="down" style="font-size:0.9rem">-1.07%</span>
+                        <span class="stock-score">42分</span>
+                    </div>
+                </div>
+                <div class="stock-card">
+                    <div>
+                        <span style="color:#666;margin-right:8px">#9</span>
+                        <span class="stock-name">美的集团</span>
+                        <span class="stock-code">000333</span>
+                        <span style="color:#888;font-size:0.8rem;margin-left:8px">家电</span>
+                    </div>
+                    <div style="display:flex;align-items:center;gap:12px">
+                        <span class="down" style="font-size:0.9rem">-0.88%</span>
+                        <span class="stock-score">42分</span>
+                    </div>
+                </div>
+                <div class="stock-card">
+                    <div>
+                        <span style="color:#666;margin-right:8px">#10</span>
+                        <span class="stock-name">海天味业</span>
+                        <span class="stock-code">603288</span>
+                        <span style="color:#888;font-size:0.8rem;margin-left:8px">食品饮料</span>
+                    </div>
+                    <div style="display:flex;align-items:center;gap:12px">
+                        <span class="down" style="font-size:0.9rem">-1.81%</span>
+                        <span class="stock-score">41分</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="analysis-section">
+                <h2>📝 一句话总结</h2>
+                <p style="color:#e0e0e0;font-size:1.1rem;line-height:1.8">
+                    创业板大涨5.64%，AI与创新药双主线爆发，但大周期仍处于猴市偏空区间（比值0.9589），上证50逆势微跌显示权重乏力。<strong style="color:#00d4aa">当前不宜追高重仓</strong>，可轻仓参与强势板块龙头，严守15%仓位上限。
+                </p>
+            </div>
+            
+            <div class="analysis-section">
+                <h2>🎯 明日策略</h2>
+                <ul>
+                    <li><strong>大周期定位：猴市偏空</strong>（上证/5月线=0.9589），建议总仓位控制在40-50%</li>
+                    <li><strong>板块主线</strong>：AI（海康威视、同花顺）、创新药（药明康德）、软件（金山办公）技术面最强</li>
+                    <li><strong>操作原则</strong>：大周期不支持重仓，单只个股仓位≤15%，快进快出为主</li>
+                    <li><strong>风险提示</strong>：创业板单日暴涨后需警惕回调，上证50走弱可能拖累大盘</li>
+                    <li><strong>关注方向</strong>：电力（核电、水电）多头排列稳固，银行板块估值洼地值得关注</li>
+                </ul>
+            </div>
+            
+            <div class="analysis-section">
+                <h2>⚠️ 风险提示</h2>
+                <ul>
+                    <li>大周期处于猴市偏空区间，不宜盲目加仓</li>
+                    <li>创业板单日暴涨后短期获利盘压力较大</li>
+                    <li>上证50与创业板严重分化，风格切换风险需警惕</li>
+                    <li>严格止损：亏损≥10%减仓，≥20%无条件清仓</li>
+                </ul>
+            </div>
+            
+            <blockquote>
+                <p>免责声明：本文由程序自动生成，仅供学习交流，不构成任何投资建议。投资有风险，入市需谨慎。</p>
+            </blockquote>
+        </div>
+    </main>
+    
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <p class="footer-brand">投资日记</p>
+                <p class="footer-copy">© 2024-2026 投资日记. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="../script.js"></script>
+</body>
+</html>
